@@ -25,7 +25,7 @@ class Card extends React.Component {
         {
           (cardTrunfo === true)
             ? <p data-testid="trunfo-card">Super Trunfo</p>
-            : <p>{ }</p>
+            : <p />
         }
       </>
     );

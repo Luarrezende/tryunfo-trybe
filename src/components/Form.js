@@ -22,30 +22,35 @@ class Form extends React.Component {
         <input
           type="text"
           data-testid="name-input"
+          name="cardName"
           value={ cardName }
           onChange={ onInputChange }
         />
         <input
           type="textarea"
           data-testid="description-input"
+          name="cardDescription"
           value={ cardDescription }
           onChange={ onInputChange }
         />
         <input
           type="number"
           data-testid="attr1-input"
+          name="cardAttr1"
           value={ cardAttr1 }
           onChange={ onInputChange }
         />
         <input
           type="number"
           data-testid="attr2-input"
+          name="cardAttr2"
           value={ cardAttr2 }
           onChange={ onInputChange }
         />
         <input
           type="number"
           data-testid="attr3-input"
+          name="cardAttr3"
           value={ cardAttr3 }
           onChange={ onInputChange }
         />
@@ -67,6 +72,7 @@ class Form extends React.Component {
         <input
           type="checkbox"
           data-testid="trunfo-input"
+          name="cardTrunfo"
           checked={ cardTrunfo }
           onChange={ onInputChange }
         />
