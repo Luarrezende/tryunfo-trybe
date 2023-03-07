@@ -105,6 +105,7 @@ class App extends React.Component {
           cardTrunfo={ cardTrunfo }
           isSaveButtonDisabled={ isSaveButtonDisabled }
           onSaveButtonClick={ this.onSaveButtonClick }
+          hasTrunfo={ this.storage.some((card) => card.cardTrunfo) }
         />
         <Card
           cardName={ cardName }
@@ -116,6 +117,19 @@ class App extends React.Component {
           cardRare={ cardRare }
           cardTrunfo={ cardTrunfo }
         />
+        {this.storage.map((item, index) => (
+          <Card
+            key={ index }
+            cardName={ item.cardName }
+            cardDescription={ item.cardDescription }
+            cardAttr1={ item.cardAttr1 }
+            cardAttr2={ item.cardAttr2 }
+            cardAttr3={ item.cardAttr3 }
+            cardImage={ item.cardImage }
+            cardRare={ item.cardRare }
+            cardTrunfo={ item.cardTrunfo }
+          />
+        ))}
       </div>
     );
   }

@@ -18,7 +18,7 @@ class Form extends React.Component {
       onSaveButtonClick,
     } = this.props;
     return (
-      <form>
+      <form onSubmit={ (e) => { e.preventDefault(); } }>
         <input
           type="text"
           data-testid="name-input"
@@ -73,17 +73,23 @@ class Form extends React.Component {
           <option>raro</option>
           <option>muito raro</option>
         </select>
-        <input
-          type="checkbox"
-          data-testid="trunfo-input"
-          name="cardTrunfo"
-          checked={ cardTrunfo }
-          onChange={ onInputChange }
-        />
+        {
+          (hasTrunfo === true)
+            ? <p data-testid="trunfo-card">Você já tem um Super Trunfo em seu baralho</p>
+            : (
+              <input
+                type="checkbox"
+                data-testid="trunfo-input"
+                name="cardTrunfo"
+                checked={ cardTrunfo }
+                onChange={ onInputChange }
+              />)
+        }
         <button
           data-testid="save-button"
           disabled={ isSaveButtonDisabled }
           onClick={ onSaveButtonClick }
+          type="submit"
         >
           Salvar
         </button>
